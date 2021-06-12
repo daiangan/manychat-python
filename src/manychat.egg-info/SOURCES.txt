@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/manychat/__init__.py
+src/manychat/api.py
+src/manychat.egg-info/PKG-INFO
+src/manychat.egg-info/SOURCES.txt
+src/manychat.egg-info/dependency_links.txt
+src/manychat.egg-info/requires.txt
+src/manychat.egg-info/top_level.txt
