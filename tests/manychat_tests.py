@@ -8,7 +8,8 @@ mc = ManyChat(
 )
 
 # Page
-page_info = mc.fb.page.get_info()
+# page_info = mc.fb.page.get_info()
+new_tag = mc.fb.page.create_tag()
 
 
 # Subscriber
@@ -17,4 +18,4 @@ page_info = mc.fb.page.get_info()
 # )
 
 
-print(page_info)
+print(new_tag)
