@@ -29,20 +29,35 @@ class API:
             'data': None,
         }
 
-        if method == 'GET':
-            try:
+        try:
+            mc_response = None
+
+            if method == 'GET':
                 mc_response = requests.get(
                     url=f'{self.api_base_url}{endpoint}',
                     headers=self.headers,
                     params=params,
                     timeout=5,
                 )
-            except Exception as e:
-                response = {
-                    'status': 'error',
-                    'message': e,
-                }
+
+            elif method == 'POST':
+                mc_response = requests.post(
+                    url=f'{self.api_base_url}{endpoint}',
+                    headers=self.headers,
+                    data=json.dumps(params),
+                    timeout=5,
+                )
+
             else:
-                response = json.loads(mc_response.text)
+                return NotImplemented
+
+        except Exception as e:
+            response = {
+                'status': 'error',
+                'message': e,
+            }
+
+        else:
+            response = json.loads(mc_response.text)
 
         return response
