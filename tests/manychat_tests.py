@@ -34,9 +34,16 @@ mc = ManyChat(
 #     field_id=2464420,
 #     field_value='New value',
 # )
-bot_field = mc.fb.page.set_bot_field_by_name(
-    field_name='test_bot_field',
-    field_value='Other new value',
+# bot_field = mc.fb.page.set_bot_field_by_name(
+#     field_name='test_bot_field',
+#     field_value='Other new value',
+# )
+
+
+# Sending
+send_flow = mc.fb.sending.send_flow(
+    subscriber_id=1234567890,
+    flow_ns='content20210615114753_45563'
 )
 
 
@@ -46,4 +53,4 @@ bot_field = mc.fb.page.set_bot_field_by_name(
 # )
 
 
-print(bot_field)
+print(send_flow)
