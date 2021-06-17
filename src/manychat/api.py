@@ -5,7 +5,7 @@ import requests
 
 
 @dataclass
-class API:
+class ManyChatAPI:
     api_base_url = 'https://api.manychat.com/fb/'
     api_key: str
     headers: dict = field(init=False)

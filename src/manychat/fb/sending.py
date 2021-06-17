@@ -1,10 +1,10 @@
 from dataclasses import dataclass
 
-from ..utils import api
+from ..api import ManyChatAPI
 
 
 @dataclass
-class Sending(api.API):
+class Sending(ManyChatAPI):
     api_key: str
     base_endpoint = 'sending'
 

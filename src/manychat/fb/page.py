@@ -1,11 +1,11 @@
 from dataclasses import dataclass
 from typing import Union, List
 
-from ..utils import api
+from ..api import ManyChatAPI
 
 
 @dataclass
-class Page(api.API):
+class Page(ManyChatAPI):
     api_key: str
     base_endpoint = 'page'
 

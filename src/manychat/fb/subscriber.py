@@ -1,11 +1,11 @@
 from dataclasses import dataclass
-from typing import List, Optional
+from typing import List
 
-from ..utils import api
+from ..api import ManyChatAPI
 
 
 @dataclass
-class Subscriber(api.API):
+class Subscriber(ManyChatAPI):
     api_key: str
     base_endpoint = 'subscriber'
 
@@ -174,55 +174,48 @@ class Subscriber(api.API):
         return response
 
     def create_subscriber(self,
-                          first_name: str,
-                          last_name: str,
-                          phone: str,
-                          email: str,
-                          gender: str,
-                          consent_phrase: Optional[str],
+                          first_name: str = None,
+                          last_name: str = None,
+                          phone: str = None,
+                          email: str = None,
+                          gender: str = None,
+                          consent_phrase: str = None,
                           has_opt_in_sms: bool = False,
                           has_opt_in_email: bool = False,
                           ) -> dict:
+
+        params = {
+            key: value for key, value in locals().items()
+            if value and key not in ['self', 'has_opt_in_sms', 'has_opt_in_email']
+        }
+
         response = self.api_request(
             method='POST',
             endpoint=f'{self.base_endpoint}/createSubscriber',
-            params={
-                'first_name': first_name,
-                'last_name': last_name,
-                'phone': phone,
-                'email': email,
-                'gender': gender,
-                'has_opt_in_sms': has_opt_in_sms,
-                'has_opt_in_email': has_opt_in_email,
-                'consent_phrase': consent_phrase,
-            },
+            params=params,
         )
         return response
 
     def update_subscriber(self,
                           subscriber_id: int,
-                          first_name: str,
-                          last_name: str,
-                          phone: str,
-                          email: str,
-                          gender: str,
-                          consent_phrase: Optional[str],
+                          first_name: str = None,
+                          last_name: str = None,
+                          phone: str = None,
+                          email: str = None,
+                          gender: str = None,
+                          consent_phrase: str = None,
                           has_opt_in_sms: bool = False,
                           has_opt_in_email: bool = False,
                           ) -> dict:
+
+        params = {
+            key: value for key, value in locals().items()
+            if value and key not in ['self', 'has_opt_in_sms', 'has_opt_in_email']
+        }
+
         response = self.api_request(
             method='POST',
             endpoint=f'{self.base_endpoint}/updateSubscriber',
-            params={
-                'subscriber_id': subscriber_id,
-                'first_name': first_name,
-                'last_name': last_name,
-                'phone': phone,
-                'email': email,
-                'gender': gender,
-                'has_opt_in_sms': has_opt_in_sms,
-                'has_opt_in_email': has_opt_in_email,
-                'consent_phrase': consent_phrase,
-            },
+            params=params,
         )
         return response
