@@ -37,7 +37,7 @@ So, for example, the ManyChat endpoint __/fb/sending/sendFlow__ is translated to
 More info about [Style Guide for Python Code.](https://www.python.org/dev/peps/pep-0008/#function-and-variable-names)
 <br>
 <br>
-Please read the official ManyChat API Documentation:
+Please read the official ManyChat API Documentation for more details:
 <br>
 [https://api.manychat.com/](https://api.manychat.com/)
 <br>
@@ -47,7 +47,7 @@ Please read the official ManyChat API Documentation:
 
 This project is created and maintained by:
 <br>
-Daian Gan <br>
+__Daian Gan__ <br>
 Github: daiangan<br/>
 E-mail: daian@ganmedia.com<br/>
-Website: https://ganmedia.com<br/>
+Website: https://daiangan.com<br/>

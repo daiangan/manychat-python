@@ -58,11 +58,6 @@ mc = ManyChat(
 #     user_ref=os.getenv('SUBSCRIBER_ID'),
 # )
 
-subscriber = mc.fb.subscriber.update_subscriber(
-    subscriber_id=12,
-)
 
 
 
-
-# print(subscriber)
