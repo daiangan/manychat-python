@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import List, Optional
 
 from ..utils import api
 
@@ -53,7 +54,7 @@ class Subscriber(api.API):
 
     def find_by_system_field(self,
                              email: str,
-                             phone:str) -> dict:
+                             phone: str) -> dict:
         response = self.api_request(
             method='GET',
             endpoint=f'{self.base_endpoint}/findBySystemField',
@@ -116,21 +117,112 @@ class Subscriber(api.API):
         )
         return response
 
-    def set_custom_field(self):
-        return NotImplemented
+    def set_custom_field(self,
+                         subscriber_id: int,
+                         field_id: int,
+                         field_value: str) -> dict:
+        response = self.api_request(
+            method='POST',
+            endpoint=f'{self.base_endpoint}/setCustomField',
+            params={
+                'subscriber_id': subscriber_id,
+                'field_id': field_id,
+                'field_value': field_value,
+            },
+        )
+        return response
 
-    def set_custom_fields(self):
-        return NotImplemented
+    def set_custom_fields(self,
+                          subscriber_id: int,
+                          fields: List[dict]) -> dict:
+        response = self.api_request(
+            method='POST',
+            endpoint=f'{self.base_endpoint}/setCustomFields',
+            params={
+                'subscriber_id': subscriber_id,
+                'fields': fields,
+            },
+        )
+        return response
 
-    def set_custom_field_by_name(self):
-        return NotImplemented
+    def set_custom_field_by_name(self,
+                                 subscriber_id: int,
+                                 field_name: str,
+                                 field_value: str) -> dict:
+        response = self.api_request(
+            method='POST',
+            endpoint=f'{self.base_endpoint}/setCustomFieldByName',
+            params={
+                'subscriber_id': subscriber_id,
+                'field_name': field_name,
+                'field_value': field_value,
+            },
+        )
+        return response
 
-    def verify_by_signed_request(self):
-        return NotImplemented
+    def verify_by_signed_request(self,
+                                 subscriber_id: int,
+                                 signed_request: str) -> dict:
+        response = self.api_request(
+            method='POST',
+            endpoint=f'{self.base_endpoint}/verifyBySignedRequest',
+            params={
+                'subscriber_id': subscriber_id,
+                'signed_request': signed_request,
+            },
+        )
+        return response
 
-    def create_subscriber(self):
-        return NotImplemented
+    def create_subscriber(self,
+                          first_name: str,
+                          last_name: str,
+                          phone: str,
+                          email: str,
+                          gender: str,
+                          consent_phrase: Optional[str],
+                          has_opt_in_sms: bool = False,
+                          has_opt_in_email: bool = False,
+                          ) -> dict:
+        response = self.api_request(
+            method='POST',
+            endpoint=f'{self.base_endpoint}/createSubscriber',
+            params={
+                'first_name': first_name,
+                'last_name': last_name,
+                'phone': phone,
+                'email': email,
+                'gender': gender,
+                'has_opt_in_sms': has_opt_in_sms,
+                'has_opt_in_email': has_opt_in_email,
+                'consent_phrase': consent_phrase,
+            },
+        )
+        return response
 
-    def update_subscriber(self):
-        return NotImplemented
-
+    def update_subscriber(self,
+                          subscriber_id: int,
+                          first_name: str,
+                          last_name: str,
+                          phone: str,
+                          email: str,
+                          gender: str,
+                          consent_phrase: Optional[str],
+                          has_opt_in_sms: bool = False,
+                          has_opt_in_email: bool = False,
+                          ) -> dict:
+        response = self.api_request(
+            method='POST',
+            endpoint=f'{self.base_endpoint}/updateSubscriber',
+            params={
+                'subscriber_id': subscriber_id,
+                'first_name': first_name,
+                'last_name': last_name,
+                'phone': phone,
+                'email': email,
+                'gender': gender,
+                'has_opt_in_sms': has_opt_in_sms,
+                'has_opt_in_email': has_opt_in_email,
+                'consent_phrase': consent_phrase,
+            },
+        )
+        return response
