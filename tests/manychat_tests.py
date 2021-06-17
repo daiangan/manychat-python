@@ -41,16 +41,16 @@ mc = ManyChat(
 
 
 # Sending
-# send_flow = mc.fb.sending.send_flow(
-#     subscriber_id=os.getenv('SUBSCRIBER_ID'),
-#     flow_ns='content20210615114753_45563'
-# )
+send_flow = mc.fb.sending.send_flow(
+    subscriber_id=os.getenv('SUBSCRIBER_ID'),
+    flow_ns='content20210615114753_45563'
+)
 
 
 # Subscriber
-# subscriber_info = mc.fb.subscriber.get_info(
-#     subscriber_id=os.getenv('SUBSCRIBER_ID'),
-# )
+subscriber_info = mc.fb.subscriber.get_info(
+    subscriber_id=os.getenv('SUBSCRIBER_ID'),
+)
 # subscriber = mc.fb.subscriber.find_by_name(
 #     name='Your Name'
 # )
