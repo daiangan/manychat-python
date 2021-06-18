@@ -1,6 +1,6 @@
 # ManyChat Python Package
 
-This is an unofficial Python package for an easy use of the ManyChat API.
+This is an unofficial Python package for an easy use of the [ManyChat API.](https://api.manychat.com/)
 
 #### Installation
 ```text
@@ -27,7 +27,9 @@ subscriber_info = mc.fb.subscriber.get_info(
 )
 
 ```
-To see more examples, please go to: [tests/manychat_tests.py](tests/manychat_tests.py)
+To see more examples, please go to: [tests/manychat_tests.py](https://github.com/daiangan/manychat-python/blob/main/tests/manychat_tests.py)
+<br>
+GitHub Repo: [https://github.com/daiangan/manychat-python](https://github.com/daiangan/manychat-python)
 
 #### Some Notes:
 All methods are named using the Python function naming rules: lowercase with words separated by underscores as necessary to improve readability.
@@ -47,7 +49,7 @@ Please read the official ManyChat API Documentation for more details:
 
 This project is created and maintained by:
 <br>
-__Daian Gan__ <br>
-Github: daiangan<br/>
+__Daian Gan__<br>
+Github: [daiangan](https://github.com/daiangan)<br/>
 E-mail: daian@ganmedia.com<br/>
 Website: https://daiangan.com<br/>
