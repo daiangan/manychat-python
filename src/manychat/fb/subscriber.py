@@ -53,8 +53,8 @@ class Subscriber(ManyChatAPI):
         return response
 
     def find_by_system_field(self,
-                         email: str = None,
-                         phone: str = None) -> dict:
+                             email: str = None,
+                             phone: str = None) -> dict:
         if email is None and phone is None:
             return {
                 'error': True,
