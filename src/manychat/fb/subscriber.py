@@ -53,15 +53,24 @@ class Subscriber(ManyChatAPI):
         return response
 
     def find_by_system_field(self,
-                             email: str,
-                             phone: str) -> dict:
+                         email: str = None,
+                         phone: str = None) -> dict:
+        if email is None and phone is None:
+            return {
+                'error': True,
+                'message': 'At least an email or a phone number must be provided.'
+            }
+        
+        params = {}
+        if email is not None:
+            params['email'] = email
+        if phone is not None:
+            params['phone'] = phone
+        
         response = self.api_request(
             method='GET',
             endpoint=f'{self.base_endpoint}/findBySystemField',
-            params={
-                'email': email,
-                'phone': phone,
-            },
+            params=params,
         )
         return response
 
