@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "manychat-python"
-version = "0.1.1"
+version = "0.1.2"
 description = "API wrapper for Manychat written in Python"
 authors = ["Juan Carlos Rios <juankrios15@gmail.com>"]
 license = "MIT"
