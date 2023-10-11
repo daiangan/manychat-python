@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "API wrapper for Manychat written in Python"
 authors = ["Juan Carlos Rios <juankrios15@gmail.com>"]
 license = "MIT"
-homepage = "https://github.com/GearPlug/manychat-python"
+homepage = "https://github.com/juanrios15/manychat-python"
 readme = "README.md"
 packages = [{include = "manychat"}]
 
