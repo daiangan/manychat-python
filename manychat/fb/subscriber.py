@@ -162,6 +162,7 @@ class Subscriber(ManyChatAPI):
         first_name: str = None,
         last_name: str = None,
         phone: str = None,
+        whatsapp_phone: str = None,
         email: str = None,
         gender: str = None,
         consent_phrase: str = None,
