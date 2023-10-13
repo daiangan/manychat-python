@@ -1,6 +1,19 @@
+[tool.poetry]
+name = "manychat-python"
+version = "0.1.4"
+description = "API wrapper for Manychat written in Python"
+authors = ["Juan Carlos Rios <juankrios15@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/juanrios15/manychat-python"
+readme = "README.md"
+packages = [{include = "manychat"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.26.0"
+
+
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
